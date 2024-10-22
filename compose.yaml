@@ -1,0 +1,12 @@
+services:
+  wikijs:
+    container_name: wiki
+    image: requarks/wiki:2
+    volumes:
+       - ./db:/wiki/db
+       - ./favicons:/wiki/assets/favicons
+    environment:
+      DB_TYPE: sqlite
+      DB_FILEPATH: ./db/DB.sqlite
+    ports:
+      - "80:3000"
